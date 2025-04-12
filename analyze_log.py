@@ -19,7 +19,10 @@ def analyze_log_file(filename="access.log"):
         print(f"Error: File '{filename}' not found.")
 
     # set up variables to store the datetime, error count, unique IPs, and URL counts for the log file.
-
+for line in log_lines:
+    match = re.search(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) - (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \"GET (.+) HTTP/1.1\" (\d+)", line)
+    if match:
+        timestamp, ip, url, status_code = match.groups()
     # a.  loop through each line in the log file.  This would be the log_lines list if you opened the log the same way as in the instructions.  
     # b.  inside this loop, first extract the log data using the extract_log_data function or the regular expression given in the instructions.
     # c.  if the data is extracted successfully, update the error count, unique IPs, and URL counts.
