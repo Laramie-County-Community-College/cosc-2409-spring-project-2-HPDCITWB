@@ -43,7 +43,8 @@ for line in log_lines:
    print(f"Unique IP Addresses: {len(unique_ips)}")
 
    print(URL Access Counts:)
-   
+   for url, count in url_counts.items(): 
+        print(f"    {url]: {count}")
    
    
    
