@@ -32,7 +32,7 @@ unique_ips.add(ip)
 url_counts[url] += 1
 
 if int(status_code) >= 400:
-        error_count += 1
+     error_count += 1
    
 print(f"Total Errors (4xx and 5xx): {error_count}")
    
@@ -40,7 +40,7 @@ print(f"Unique IP Addresses: {len(unique_ips)}")
 
 print("URL Access Counts:")
 for url, count in url_counts.items(): 
-        print(f"    {url}: {count}")
+     print(f"    {url}: {count}")
    
    
    
