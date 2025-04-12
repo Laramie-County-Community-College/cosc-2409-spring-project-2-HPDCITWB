@@ -25,12 +25,18 @@ for line in log_lines:
         timestamp, ip, url, status_code = match.groups()
    
    error count = 0
+
    unique_ips = set()
+
    url_counts = defaultdict(int)
+
 
    unique_ips.add(ip)
 
    url_counts[url] += 1
+
+   if int(status_code) >= 400:
+        error_count += 1
    
    
    
