@@ -22,6 +22,5 @@ def generate_log_file(filename="access.log", num_entries=100):
 
 
 
-# Generate a sample log file (uncomment to create the file)
 generate_log_file()
 

@@ -17,8 +17,7 @@ def analyze_log_file(filename):
         match = re.search(
             r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) - "
             r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - "
-            r"\"GET (.+) HTTP/1.1\" (\d+)",
-            line)
+            r"\"GET (.+) HTTP/1.1\" (\d+)", line)
         
         if match:
             timestamp, ip, url, status_code = match.groups()
