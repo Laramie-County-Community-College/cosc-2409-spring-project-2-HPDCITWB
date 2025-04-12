@@ -1,5 +1,5 @@
+from collections import defaultdict
 import re
-import os
 
 def analyze_log_file(filename):
     try:
@@ -7,18 +7,19 @@ def analyze_log_file(filename):
             log_lines = f.readlines()
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found.")
-        return  
+        return
 
     error_count = 0
     unique_ips = set()
     url_counts = defaultdict(int)
 
-for line in log_lines:
-    match = re.search(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) - (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \"GET (.+) HTTP/1.1\" (\d+)", line)
-    if match:
-        timestamp, ip, url, status_code = match.groups()
-        line
-        
+    for line in log_lines:
+        match = re.search(
+            r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) - "
+            r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - "
+            r"\"GET (.+) HTTP/1.1\" (\d+)",
+            line
+        )
         if match:
             timestamp, ip, url, status_code = match.groups()
             unique_ips.add(ip)
@@ -31,6 +32,5 @@ for line in log_lines:
     print("URL Access Counts:")
     for url, count in url_counts.items():
         print(f"    {url}: {count}")
-
 
 analyze_log_file("access.log")
