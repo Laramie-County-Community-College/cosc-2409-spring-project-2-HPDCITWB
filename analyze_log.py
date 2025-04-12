@@ -13,11 +13,10 @@ def analyze_log_file(filename="access.log"):
     """
 
     try:
-        # open the access.log file and read the lines into a list (ideally named log_lines if you want to use the code from the instruction page)
-        pass  #remove this line when you start coding
+        with open(filename, "r") as f:
+            log_lines = f.readlines()
     except FileNotFoundError:
-        print(f"Error: Log file '{filename}' not found.")
-        return
+        print(f"Error: File '{filename}' not found.")
 
     # set up variables to store the datetime, error count, unique IPs, and URL counts for the log file.
 
