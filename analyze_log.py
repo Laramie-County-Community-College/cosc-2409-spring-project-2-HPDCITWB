@@ -1,5 +1,6 @@
 from collections import defaultdict
 import re
+import os
 
 def analyze_log_file(filename):
     try:
