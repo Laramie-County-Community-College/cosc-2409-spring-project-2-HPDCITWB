@@ -1,7 +1,5 @@
 from collections import defaultdict
 import re
-import os
-
 
 def analyze_log_file(filename="access.log"):
     try:
@@ -9,11 +7,10 @@ def analyze_log_file(filename="access.log"):
             log_lines = f.readlines()
     except FileNotFoundError:
         print(f"Error: File '{filename}' not found.")
+        return
 
 
-error_count = 0
-unique_ips = set()
-url_counts = defaultdict(int)
+.vscode/settings.json
 
 for line in log_lines:
     match = re.search(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) - (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - \"GET (.+) HTTP/1.1\" (\d+)", line)
