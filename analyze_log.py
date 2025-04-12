@@ -38,6 +38,9 @@ for line in log_lines:
    if int(status_code) >= 400:
         error_count += 1
    
+   print(f"Total Errors (4xx and 5xx): {error_count}")
+   
+   
    
    
    
