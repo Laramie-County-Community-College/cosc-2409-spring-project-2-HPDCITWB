@@ -40,6 +40,9 @@ for line in log_lines:
    
    print(f"Total Errors (4xx and 5xx): {error_count}")
    
+   print(f"Unique IP Addresses: {len(unique_ips)}")
+
+   print(URL Access Counts:)
    
    
    
