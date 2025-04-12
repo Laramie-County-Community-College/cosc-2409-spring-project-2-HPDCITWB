@@ -26,6 +26,7 @@ for line in log_lines:
    
    error count = 0
    unique_ips = set()
+   url_counts = defaultdict(int)
    
    
    
