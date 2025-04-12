@@ -18,8 +18,8 @@ def analyze_log_file(filename):
             r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) - "
             r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - "
             r"\"GET (.+) HTTP/1.1\" (\d+)",
-            line
-        )
+            line)
+        
         if match:
             timestamp, ip, url, status_code = match.groups()
             unique_ips.add(ip)
